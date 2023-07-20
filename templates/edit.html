@@ -1,0 +1,19 @@
+<script>
+function getContent(){
+    document.getElementById("area").value = document.getElementById("editable").innerHTML;
+}
+</script>
+{% extends 'base.html' %}
+{% block title %}
+    Edit
+{% endblock title %}
+{% block content %}
+    <form method="post"
+          enctype="multipart/form-data"
+          onsubmit="return getContent()">
+        {% csrf_token %}
+        <textarea name="edited" id="area" class="hidden"></textarea>
+        <button type="submit" class="btn">ok</button>
+    </form>
+    <pre contenteditable="true" id="editable" class="m-3 font-mono textarea">{{ plain }}</pre>
+{% endblock content %}
