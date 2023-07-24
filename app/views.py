@@ -32,7 +32,8 @@ def edit(request):
 
     if request.method == 'POST':
         edited = request.POST.get('edited').split('\n')
-        edited = [line.strip().split("\"")[1] for line in edited]
+        edited = [i.strip().split("\"")[1] if "\"" in i else i.strip() for i in edited]
+        edited = [i for i in edited if i != '']
         request.session['edited'] = edited
         return redirect('select')
 
@@ -47,7 +48,14 @@ def select(request):
             selected = form.cleaned_data['choices_field']
             print(selected)
             request.session['selected'] = selected
-            # return redirect('download')
+            return redirect('download')
     else:
         form = MultipleChoiceForm(choices=edited)
     return render(request, 'select.html', {'form': form})
+
+
+def download(request):
+    selected = request.session.get('selected')
+    return render(
+        request, 'download.html', {'selected': selected, 'selected': selected}
+    )

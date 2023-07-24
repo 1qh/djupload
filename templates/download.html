@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}
+    Download
+{% endblock title %}
+{% block content %}
+    {% for s in selected %}<li>{{ s }}</li>{% endfor %}
+{% endblock content %}

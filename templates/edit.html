@@ -12,8 +12,8 @@ function getContent(){
           enctype="multipart/form-data"
           onsubmit="return getContent()">
         {% csrf_token %}
-        <textarea name="edited" id="area" class="hidden"></textarea>
         <button type="submit" class="btn">ok</button>
+        <textarea name="edited" id="area" class="hidden"></textarea>
     </form>
-    <pre contenteditable="true" id="editable" class="m-3 font-mono textarea">{{ plain }}</pre>
+    <pre contenteditable="true" id="editable" class="font-mono textarea">{{ plain }}</pre>
 {% endblock content %}
