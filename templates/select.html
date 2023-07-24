@@ -8,6 +8,7 @@
         <button type="submit" class="btn">ok</button>
         {% for c in form.choices_field %}
             <label class="label">
+                <input type="checkbox" class="hidden checkbox">
                 {{ c.tag }}
                 <span class="w-full pl-3 label-text">{{ c.choice_label }}</span>
             </label>

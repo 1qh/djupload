@@ -46,7 +46,6 @@ def select(request):
         form = MultipleChoiceForm(request.POST, choices=edited)
         if form.is_valid():
             selected = form.cleaned_data['choices_field']
-            print(selected)
             request.session['selected'] = selected
             return redirect('download')
     else:
