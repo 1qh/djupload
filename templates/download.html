@@ -3,5 +3,14 @@
     Download
 {% endblock title %}
 {% block content %}
-    {% for s in selected %}<li>{{ s }}</li>{% endfor %}
+    {% for k, v in extracted.items %}
+        <div tabindex="0" class="collapse">
+            <div class="-mb-3 text-2xl font-bold collapse-title">{{ k }}</div>
+            <div class="collapse-content">
+                <pre>
+                    {{ v }}
+                </pre>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock content %}

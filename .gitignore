@@ -1,3 +1,4 @@
+*.pdf
 media/
 migrations/
 recipe.toml

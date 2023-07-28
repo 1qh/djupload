@@ -13,10 +13,12 @@
         {% tailwind_css %}
     </head>
     <body class="m-3">
-        <a class="btn" href="{% url 'upload' %}">upload</a>
-        <a class="btn" href="{% url 'edit' %}">edit</a>
-        <a class="btn" href="{% url 'select' %}">select</a>
-        <a class="btn" href="{% url 'download' %}">download</a>
+        <div class="mb-2">
+            <a class="btn" href="{% url 'upload' %}">upload</a>
+            <a class="btn" href="{% url 'edit' %}">edit</a>
+            <a class="btn" href="{% url 'select' %}">select</a>
+            <a class="btn" href="{% url 'download' %}">download</a>
+        </div>
         {% block content %}
         {% endblock content %}
     </body>

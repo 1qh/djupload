@@ -14,7 +14,7 @@ class MultipleChoiceForm(forms.Form):
         choices = kwargs.pop('choices')
         super(MultipleChoiceForm, self).__init__(*args, **kwargs)
         self.fields['choices_field'] = forms.MultipleChoiceField(
-            choices=[(x, x) for x in choices],
+            choices=[(x, x[8:]) for x in choices],
             widget=forms.CheckboxSelectMultiple(
                 attrs={'class': 'checkbox'},
             ),
